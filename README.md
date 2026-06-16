@@ -6,7 +6,7 @@ An example SQD Squid SDK indexer (a "squid") built step by step from an empty di
 
 This squid indexes [USDT](https://etherscan.io/token/0xdac17f958d2ee523a2206206994597c13d831ec7) ERC-20 `Transfer` events on Ethereum mainnet and stores them in PostgreSQL.
 
-- `src/main.ts` configures an `EvmBatchProcessor`, points it at the SQD Network gateway for Ethereum mainnet (`https://v2.archive.subsquid.io/network/ethereum-mainnet`) plus an RPC endpoint, subscribes to `Transfer` logs from the USDT contract (`0xdAC17F958D2ee523a2206206994597C13D831ec7`), decodes them, and inserts `Transfer` records via `@subsquid/typeorm-store`.
+- `src/main.ts` configures an `EvmBatchProcessor`, points it at the SQD Network gateway for Ethereum mainnet plus an RPC endpoint, subscribes to `Transfer` logs from the USDT contract (`0xdAC17F958D2ee523a2206206994597C13D831ec7`), decodes them, and inserts `Transfer` records via `@subsquid/typeorm-store`.
 - `schema.graphql` defines the `Transfer` entity (`id`, `from`, `to`, `value`).
 - `src/model/generated/` holds the TypeORM entity classes generated from the schema.
 - `src/abi/usdt.ts` holds the typed event/function bindings generated from `abi/usdt.json`.
